@@ -1,0 +1,14 @@
+  <div>
+
+  <img class="imageBox" src="{{images.link}}" alt="">
+  <h3 class="author">{{images.author}}</h3>
+  <h4 class="description">{{images.description}}</h4>
+  
+  <form action="/gallery/{{images.id}}?_method=DELETE" method="POST">
+    <input type="submit" value="D E L E T E">
+  </form>
+  <form action="/gallery/{{images.id}}/edit" method="GET">
+    <input type="submit" value="CLICK HERE FOR EDIT FORM">
+  </form>
+
+  </div>

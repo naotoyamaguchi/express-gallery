@@ -1,0 +1,27 @@
+@import "./partials/reset";
+@import "./partials/clearfix";
+@import "./partials/general_styles";
+
+
+body {
+  @include respond-to('handheld'){
+    background: red;
+  }
+
+  @include respond-to('tablet'){
+    background: blue;
+  }
+
+  @include respond-to('large'){
+    background: green;
+  }
+ 
+
+  // @include respond-to('large'){
+  //   background: url(/assets/bg.jpg);
+  // }
+}
+
+.imageBox{
+  width: 200px
+}
