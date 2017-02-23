@@ -1,9 +1,11 @@
-  <div>
-  {{#each images}}
-  <a href='/gallery/{{id}}'><img class="imageBox" src="{{link}}" alt=""></a>
-  <br>
-  <div>Author : {{author}}</div>
-  <br>
-  <div>Description : {{description}}</div>
-  {{/each}}
+<hr>
+<div class="gallery_container">
+{{#each images}}
+  <div class="post_box">
+    <a href='/gallery/{{id}}'><img class="image_box" src="{{link}}" alt=""></a>
+    <br>
+    <div class ="post_header">Author : {{author}}</div>
+    <div class="post_header">{{link}}</div>
   </div>
+{{/each}}
+</div>

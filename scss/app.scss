@@ -2,10 +2,68 @@
 @import "./partials/clearfix";
 @import "./partials/general_styles";
 
+.header_box{
+  @include respond-to('large'){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    // border-style:solid ;
+    // border-width: 2px;
+    // border-color: purple;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.dotted_hr{
+  @include respond-to('large'){
+    border-top: 1px dotted;
+  }
+}
+
+hr{
+  width: 85%;
+}
+
+h1{
+  @include respond-to('handheld'){
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: rgb(124, 119, 125);
+    font-size: 7.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5rem;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+  }
+
+  @include respond-to('large'){
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: rgb(124, 119, 125);
+    font-size: 7.5rem;
+    letter-spacing: 0.5rem;
+    padding-right: 1rem
+  }
+}
+
+.header_description{
+  @include respond-to('large'){
+    font-family: 'Arial', sans-serif;
+    color: rgb(164, 164, 165);
+    border-left: 1px solid black; height: 6rem;
+    padding-left: 1rem;
+  }
+}
+
 
 body {
   @include respond-to('handheld'){
-    background: red;
+    background: white;
   }
 
   @include respond-to('tablet'){
@@ -13,7 +71,7 @@ body {
   }
 
   @include respond-to('large'){
-    background: green;
+    background: white;
   }
  
 
@@ -22,6 +80,73 @@ body {
   // }
 }
 
-.imageBox{
-  width: 200px
+.gallery_container{
+  @include respond-to('large'){
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-style: solid;
+    border-width: 5px;
+    border-color: red;
+    width: 85%;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.post_box{
+  @include respond-to('handheld'){
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: rgb(164, 164, 165);
+    font-size: 1rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: left;
+    align-content: center;
+  }
+
+  @include respond-to('large'){
+    width: 32%;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: rgb(164, 164, 164);
+    font-size: 1rem;
+  }
+}
+
+.post_header{
+  @include respond-to('handheld'){
+    padding: 0.3rem;
+    word-wrap: break-word;
+  }
+}
+
+.image_box{
+  @include respond-to('handheld'){
+    height: 30rem;
+    width: 100%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  @include respond-to('large'){
+    width: 100%;
+    height: 20rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+.individual_image_box{
+  @include respond-to('handheld'){
+    padding-left: 8rem;
+    padding-right: 8rem;
+    align-content: center;
+  }
+
 }
