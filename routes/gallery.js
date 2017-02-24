@@ -51,10 +51,22 @@ router.post('/login', passport.authenticate('local',
   }
 ));
 
+// router.get('/:id', (req, res) => {
+//   Post.findById(`${req.params.id}`)
+//   .then(function (image) {
+//   Post.findAll({order: "id"})
+//   .then(function (images) {
+//     res.render('image', {image: image});
+//   });
+// });
+
 router.get('/:id', (req, res) => {
   Post.findById(`${req.params.id}`)
+  .then(function (image) {
+  Post.findAll({order: "id"})
   .then(function (images) {
-    res.render('image', {images: images});
+    res.render('image', {image: image, images:images});
+  });
   });
 });
 
