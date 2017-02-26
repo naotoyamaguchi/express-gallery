@@ -78,27 +78,33 @@ table {
   .dotted_hr {
     border-top: 1px dotted; } }
 
-body {
-  padding-top: 6rem;
-  padding-bottom: 6rem; }
+@media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
+  body {
+    padding-top: 6rem;
+    padding-bottom: 6rem; } }
+
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
+  body {
+    padding-bottom: 1rem;
+    padding-bottom: 1rem; } }
 
 hr {
   width: 75%; }
-  @media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
+  @media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
     hr {
       display: none; } }
 
-@media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
   h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     color: #7c777d;
-    font-size: 7.5rem;
+    font-size: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     letter-spacing: 0.5rem;
-    padding-top: 7rem;
+    padding-top: 3rem;
     padding-bottom: 4rem; } }
 
 @media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
@@ -110,7 +116,7 @@ hr {
     letter-spacing: 0.5rem;
     padding-right: 1rem; } }
 
-@media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
   .header_description {
     display: none; } }
 
@@ -123,19 +129,15 @@ hr {
     height: 6rem;
     padding-left: 1rem; } }
 
-@media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
   body {
     background: white; } }
-
-@media only screen and (min-device-width: 459px) and (max-device-width: 1024px), only screen and (min-device-width: 1024px) and (min-width: 459px) {
-  body {
-    background: blue; } }
 
 @media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
   body {
     background: white; } }
 
-@media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
   .sidebar {
     display: none; } }
 
@@ -165,14 +167,14 @@ hr {
     /*     border: 5px solid blue;
  */ } }
 
-@media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
   .detailed_post_box {
     font-family: 'Arial', sans-serif;
     font-weight: bold;
     color: #a4a4a5;
     font-size: 1rem;
-    padding-left: 7rem;
-    padding-right: 7rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     text-align: left;
@@ -215,25 +217,25 @@ hr {
     .post_box:first-child div {
       display: none; } }
 
-@media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
   .post_box:first-child {
-    padding-left: 5rem;
-    padding-right: 5rem; }
+    padding-left: 2rem;
+    padding-right: 2rem; }
     .post_box:first-child img {
-      height: 25rem;
+      height: 14rem;
       padding-bottom: 3rem;
       border-bottom: 2px #a4a4a5 solid; }
     .post_box:first-child div {
       display: none; } }
 
-@media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
   .post_box {
     font-family: 'Arial', sans-serif;
     font-weight: bold;
     color: #a4a4a5;
     font-size: 1rem;
-    padding-left: 7rem;
-    padding-right: 7rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     text-align: left;
@@ -247,20 +249,22 @@ hr {
     color: #a4a4a4;
     font-size: 1rem;
     padding-bottom: 2rem;
-    padding-top: 2rem; } }
+    padding-top: 2rem;
+    word-wrap: break-word; } }
 
-@media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
   .post_header {
     padding: 0.3rem;
-    word-wrap: break-word; } }
+    word-wrap: break-word;
+    font-weight: lighter; } }
 
 @media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
   .post_header {
     font-weight: lighter; } }
 
-@media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
   .image_box {
-    height: 30rem;
+    height: 10rem;
     width: 100%;
     padding-bottom: 1rem;
     padding-top: 1rem; } }
@@ -272,7 +276,7 @@ hr {
     padding-bottom: 0.75rem;
     object-fit: cover; } }
 
-@media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
   .individual_image_box {
     padding-left: 8rem;
     padding-right: 8rem;
@@ -292,6 +296,17 @@ hr {
     color: #a4a4a4;
     font-size: 1rem; } }
 
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
+  .user_info {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Arial', sans-serif;
+    color: #a4a4a4;
+    font-size: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px #a4a4a5 solid; } }
+
 @media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
   .user_forms {
     width: 35%;
@@ -299,9 +314,23 @@ hr {
     margin-right: auto;
     padding-top: 2rem; } }
 
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
+  .user_forms {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+    font-size: 1.5rem; } }
+
 @media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
   .image_buttons {
     width: 20%;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
+  .image_buttons {
+    width: 30%;
     margin-left: auto;
     margin-right: auto; } }
 
@@ -314,3 +343,15 @@ hr {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box; } }
+
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 1024px) {
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 1.5rem; } }
