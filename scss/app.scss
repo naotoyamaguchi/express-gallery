@@ -13,7 +13,7 @@
     // border-color: purple;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 8rem;
+    padding-bottom: 3rem;
   }
 }
 
@@ -25,6 +25,7 @@
 
 body{
   padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 hr{
@@ -52,7 +53,7 @@ h1{
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     color: rgb(124, 119, 125);
-    font-size: 7.5rem;
+    font-size: 7.5vw;
     letter-spacing: 0.5rem;
     padding-right: 1rem
   }
@@ -64,6 +65,7 @@ h1{
   }
   @include respond-to('large'){
     font-family: 'Arial', sans-serif;
+    font-size: 1vw;
     color: rgb(164, 164, 165);
     border-left: 1px solid black; height: 6rem;
     padding-left: 1rem;
@@ -98,8 +100,8 @@ body {
 
   @include respond-to('large'){
 /*     border: 2px solid black; */
+    padding-top: 2rem;
     width: 28%;
-    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     font-family: 'Arial', sans-serif;
@@ -121,6 +123,7 @@ body {
     width: 100%;
     height: 14rem;
     padding-bottom: 0.5rem;
+    object-fit: cover;
 /*     border: 5px solid blue;
  */  }
 }
@@ -165,7 +168,8 @@ body {
     padding-right: 1rem;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 0.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgb(164, 164, 165);
   }
 }
 
@@ -175,9 +179,9 @@ body {
     width: 100%;
     padding-bottom: 4rem;
     img{
-      height: 30rem;
+      height: 32rem;
       padding-bottom: 2rem;
-      border-bottom: 1px black solid;
+      border-bottom: 1px rgb(164, 164, 165) solid;
     }
     div{
       display: none;
@@ -187,14 +191,14 @@ body {
   @include respond-to('handheld'){
     padding-left: 5rem;
     padding-right: 5rem;
-  }
   img{
     height: 25rem;
     padding-bottom: 3rem;
-    border-bottom: 1px black solid;
+    border-bottom: 2px rgb(164, 164, 165) solid;
   }
   div{
     display: none;
+  }
   }
 }
 
@@ -230,6 +234,10 @@ body {
     padding: 0.3rem;
     word-wrap: break-word;
   }
+
+  @include respond-to('large'){
+    font-weight: lighter;
+  }
 }
 
 .image_box{
@@ -244,6 +252,7 @@ body {
     width: 100%;
     height: 13rem;
     padding-bottom: 0.75rem;
+    object-fit:cover;
   }
 }
 
@@ -260,4 +269,44 @@ body {
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 2rem;
+}
+
+.user_info{
+  @include respond-to('large'){
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Arial', sans-serif;
+    color: rgb(164, 164, 164);
+    font-size: 1rem;
+  }
+}
+
+.user_forms{
+  @include respond-to('large'){
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+  }
+}
+
+.image_buttons{
+  @include respond-to('large'){
+    width: 20%;
+    margin-left:auto;
+    margin-right: auto;
+  }
+}
+
+input{
+  @include respond-to('large'){
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
 }

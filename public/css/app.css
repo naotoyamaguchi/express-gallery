@@ -72,14 +72,15 @@ table {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 8rem; } }
+    padding-bottom: 3rem; } }
 
 @media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
   .dotted_hr {
     border-top: 1px dotted; } }
 
 body {
-  padding-top: 6rem; }
+  padding-top: 6rem;
+  padding-bottom: 6rem; }
 
 hr {
   width: 75%; }
@@ -105,7 +106,7 @@ hr {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     color: #7c777d;
-    font-size: 7.5rem;
+    font-size: 7.5vw;
     letter-spacing: 0.5rem;
     padding-right: 1rem; } }
 
@@ -116,6 +117,7 @@ hr {
 @media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
   .header_description {
     font-family: 'Arial', sans-serif;
+    font-size: 1vw;
     color: #a4a4a5;
     border-left: 1px solid black;
     height: 6rem;
@@ -140,8 +142,8 @@ hr {
 @media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
   .sidebar {
     /*     border: 2px solid black; */
+    padding-top: 2rem;
     width: 28%;
-    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     font-family: 'Arial', sans-serif;
@@ -159,6 +161,7 @@ hr {
     width: 100%;
     height: 14rem;
     padding-bottom: 0.5rem;
+    object-fit: cover;
     /*     border: 5px solid blue;
  */ } }
 
@@ -197,7 +200,8 @@ hr {
     padding-right: 1rem;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 0.5rem; } }
+    padding-top: 2rem;
+    border-top: 1px solid #a4a4a5; } }
 
 @media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
   .post_box:first-child {
@@ -205,24 +209,22 @@ hr {
     width: 100%;
     padding-bottom: 4rem; }
     .post_box:first-child img {
-      height: 30rem;
+      height: 32rem;
       padding-bottom: 2rem;
-      border-bottom: 1px black solid; }
+      border-bottom: 1px #a4a4a5 solid; }
     .post_box:first-child div {
       display: none; } }
 
 @media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
   .post_box:first-child {
     padding-left: 5rem;
-    padding-right: 5rem; } }
-
-.post_box:first-child img {
-  height: 25rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px black solid; }
-
-.post_box:first-child div {
-  display: none; }
+    padding-right: 5rem; }
+    .post_box:first-child img {
+      height: 25rem;
+      padding-bottom: 3rem;
+      border-bottom: 2px #a4a4a5 solid; }
+    .post_box:first-child div {
+      display: none; } }
 
 @media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
   .post_box {
@@ -252,6 +254,10 @@ hr {
     padding: 0.3rem;
     word-wrap: break-word; } }
 
+@media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
+  .post_header {
+    font-weight: lighter; } }
+
 @media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
   .image_box {
     height: 30rem;
@@ -263,7 +269,8 @@ hr {
   .image_box {
     width: 100%;
     height: 13rem;
-    padding-bottom: 0.75rem; } }
+    padding-bottom: 0.75rem;
+    object-fit: cover; } }
 
 @media only screen and (max-device-width: 458px) and (orientation: portrait), only screen and (min-device-width: 1024px) and (max-width: 458px) {
   .individual_image_box {
@@ -275,3 +282,35 @@ hr {
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 2rem; }
+
+@media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
+  .user_info {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Arial', sans-serif;
+    color: #a4a4a4;
+    font-size: 1rem; } }
+
+@media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
+  .user_forms {
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem; } }
+
+@media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
+  .image_buttons {
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media only screen and (min-device-width: 1024px) and (min-width: 1024px) {
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; } }

@@ -12,6 +12,8 @@ const CONFIG = require('./config/config.json');
 const LocalStrategy = require('passport-local').Strategy;
 const PORT = process.env.PORT || 3000;
 const RedisStore = require('connect-redis')(session);
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 let db = require('./models');
 let User = db.User;
@@ -61,12 +63,17 @@ passport.use(new LocalStrategy(
     User.findOne({
      where: {
       'user': username,
-      'password': password
+      // 'password': password
     }
   })
     .then(user => {
-      console.log("USER", user);
-      return done(null, user);
+      bcrypt.compare(password, user.password).then(res => {
+        if(res){
+          return done(null, user);
+        } else {
+          return done(null, false);
+        }
+      });
     })
     .catch(err => {
       console.log("ERRRORRRRRRRR", err);
@@ -75,6 +82,29 @@ passport.use(new LocalStrategy(
     // return done(null, false); // error and authenticted = false
   }
 ));
+
+
+// passport.use(new LocalStrategy(
+//   function (username, password, done) {
+//     console.log('username, password: ', username, password);
+//     // check if the user is authenticated or not
+//     User.findOne({
+//      where: {
+//       'user': username,
+//       'password': password
+//     }
+//   })
+//     .then(user => {
+//       console.log("USER", user);
+//       return done(null, user);
+//     })
+//     .catch(err => {
+//       console.log("ERRRORRRRRRRR", err);
+//       return done(null, false);
+//     });
+//     // return done(null, false); // error and authenticted = false
+//   }
+// ));
 
 passport.serializeUser(function(user, done) {
   return done(null, user);

@@ -3,6 +3,8 @@ const bodyparser = require('body-parser');
 const router = express.Router();
 const passport = require('passport');
 const db = require('../models');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 var Post = db.Post;
 var User = db.User;
 router.use(bodyparser.urlencoded({extended: true}));
@@ -19,17 +21,37 @@ function myAuthenticator(req, res, next){
   }
 }
 
+function isLoggedIn(req){
+  if(req.user){
+    console.log(req.user.user);
+    return true;
+  } else {
+    return false;
+  }
+}
 
+router.get('/logout', (req, res) => {
+  console.log("Logged out");
+  req.logout();
+  res.redirect(303, '/gallery');
+});
 
 router.get('/', (req, res) => {
-  Post.findAll({order: "id"})
-  .then(function (images) {
+  if(isLoggedIn(req)){
+    Post.findAll({order: "id"})
+    .then(function (images) {
+      res.render('index', {images: images, username: req.user.user});
+    });
+  } else {
+    Post.findAll({order: "id"})
+    .then(function (images) {
     res.render('index', {images: images});
-  });
+    });
+  }
 });
 
 router.get('/new', myAuthenticator, (req, res) => {
-  res.render('form');
+  res.render('form', {username: req.user.user});
 });
 
 router.get('/login', (req, res) => {
@@ -61,19 +83,29 @@ router.post('/login', passport.authenticate('local',
 // });
 
 router.get('/:id', (req, res) => {
-  Post.findById(`${req.params.id}`)
-  .then(function (image) {
-  Post.findAll({order: "id"})
-  .then(function (images) {
-    res.render('image', {image: image, images:images});
+  if(isLoggedIn(req)){
+    Post.findById(`${req.params.id}`)
+    .then(function (image) {
+    Post.findAll({order: "id", limit:3})
+    .then(function (images) {
+      res.render('image', {image: image, images:images, username: req.user.user});
+    });
   });
+} else {
+    Post.findById(`${req.params.id}`)
+    .then(function (image) {
+    Post.findAll({order: "id", limit:3})
+    .then(function (images) {
+      res.render('image', {image: image, images:images});
+    });
   });
+}
 });
 
 router.get('/:id/edit', myAuthenticator, (req, res) => {
   Post.findById(`${req.params.id}`)
   .then(function (images) {
-    res.render('edit', {images: images});
+    res.render('edit', {images: images, username: req.user.user});
   });
 });
 
@@ -115,15 +147,34 @@ router.post('/', myAuthenticator, (req, res) => {
     });
 });
 
+// router.post('/create_user', (req, res) => {
+//   User.create(
+//   {
+//     user: req.body.username,
+//     password: req.body.password
+//   }
+//   )
+//   .then(function () {
+//     res.redirect(303, '/gallery');
+//   });
+// });
+
 router.post('/create_user', (req, res) => {
-  User.create(
-  {
-    user: req.body.username,
-    password: req.body.password
-  }
-  )
-  .then(function () {
-    res.redirect(303, '/gallery');
+  console.log('req.body.username', req.body.username);
+  console.log('req.body.password', req.body.password);
+
+  bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(req.body.password, salt, function(err, hash) {
+      console.log("hash", hash);
+        // Store hash in your password DB.
+      User.create({
+        user: req.body.username,
+        password: hash
+      })
+      .then(function() {
+        res.redirect(303, '/gallery/login');
+      });
+    });
   });
 });
 

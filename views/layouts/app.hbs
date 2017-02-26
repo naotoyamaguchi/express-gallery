@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
+
   <hr class="dotted_hr">
   <div class="header_box">
     <h1>_ARCHITEKT</h1>
@@ -14,6 +15,27 @@
       Welcome to our online portfolio, we are a small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovation steps. This is the Architekt theme.
     </div>
   </div>
+  <div class="user_info">
+    {{#if username}}
+      <h3>Welcome {{username}}</h3>
+      <form action="/gallery/new" method="GET">
+        <a href="/gallery/new">New Post</a>
+      </form>
+      <form action="/gallery/logout" method="GET">
+        <a href="/gallery/logout">Log out</a>
+      </form>
+    {{else}}
+    <div>
+      <h3>Welcome Guest</h3>
+      <form action="/gallery/login" method="GET">
+        <a href="/gallery/login"> Login</a>
+        <br>
+        <a href="/gallery/create_user">Create User</a>
+      </form>
+    </div>
+    {{/if}}
+  </div>
+
   {{{body}}}
 </body>
 </html>

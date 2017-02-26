@@ -6,14 +6,15 @@
     <img class="detailed_image_box" src="{{image.link}}" alt="">
 
     <h4 class="post_header">{{image.description}}</h4>
-    
-    <form action="/gallery/{{image.id}}?_method=DELETE" method="POST">
-      <input type="submit" value="D E L E T E">
+    {{#if username}}
+    <form class="image_buttons" action="/gallery/{{image.id}}?_method=DELETE" method="POST">
+      <input type="submit" value="Delete">
     </form>
     
-    <form action="/gallery/{{image.id}}/edit" method="GET">
-      <input type="submit" value="CLICK HERE FOR EDIT FORM">
+    <form class="image_buttons" action="/gallery/{{image.id}}/edit" method="GET">
+      <input type="submit" value="Edit">
     </form>
+    {{/if}}
   </div>
 
 
