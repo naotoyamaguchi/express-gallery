@@ -20,7 +20,5 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "SESSION_SECRET": "keyboard_cat",
-  "USERNAME": "sumgai",
-  "PASSWORD": "password"
+  "SESSION_SECRET": "keyboard_cat"
 }
