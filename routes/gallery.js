@@ -147,18 +147,6 @@ router.post('/', myAuthenticator, (req, res) => {
     });
 });
 
-// router.post('/create_user', (req, res) => {
-//   User.create(
-//   {
-//     user: req.body.username,
-//     password: req.body.password
-//   }
-//   )
-//   .then(function () {
-//     res.redirect(303, '/gallery');
-//   });
-// });
-
 router.post('/create_user', (req, res) => {
   console.log('req.body.username', req.body.username);
   console.log('req.body.password', req.body.password);
